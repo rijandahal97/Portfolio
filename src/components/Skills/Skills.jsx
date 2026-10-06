@@ -11,13 +11,13 @@ const Skills = () => {
         
         <div className="skill-category">
           <div className="category-header">
-            <h3>EXPERIENCED / WORKED WITH</h3>
+            <h3><span className="dot blue"></span> WORKED WITH</h3>
             <div className="line"></div>
           </div>
           <div className="skills-grid">
             {experiencedSkills.map((skill, index) => (
               <div key={`exp-${index}`} className="skill-item experienced">
-                {skill}
+                <span className="skill-name">{skill}</span>
               </div>
             ))}
           </div>
@@ -25,13 +25,13 @@ const Skills = () => {
 
         <div className="skill-category">
           <div className="category-header">
-            <h3>CURRENTLY LEARNING / BUILDING WITH</h3>
+            <h3><span className="dot purple"></span> CURRENTLY LEARNING / BUILDING WITH</h3>
             <div className="line"></div>
           </div>
           <div className="skills-grid">
             {learningSkills.map((skill, index) => (
               <div key={`learn-${index}`} className="skill-item learning">
-                {skill}
+                <span className="skill-name">{skill}</span>
               </div>
             ))}
           </div>

@@ -13,7 +13,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section">
-      <h2 className="section-title">Featured Projects</h2>
+      <h2 className="section-title">Case Studies & Projects</h2>
       
       <div className="filter-container animate-on-scroll">
         {categories.map(cat => (
@@ -21,6 +21,7 @@ const Projects = () => {
             key={cat}
             className={`filter-btn ${filter === cat ? 'active' : ''}`}
             onClick={() => setFilter(cat)}
+            aria-label={`Filter by ${cat}`}
           >
             {cat}
           </button>
@@ -28,37 +29,40 @@ const Projects = () => {
       </div>
 
       <div className="projects-grid animate-on-scroll" style={{animationDelay: '0.2s'}}>
-        {filteredProjects.map(project => (
-          <div key={project.id} className={`project-card ${project.title === 'CareerMind' ? 'featured-highlight' : ''}`}>
-            
-            <div className="project-content">
-              <div className="project-header">
-                <div className="project-top">
-                  <span className="project-category">{project.category}</span>
-                  {project.featured && <span className="featured-badge">Featured</span>}
-                </div>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+        {filteredProjects.map((project, index) => (
+          <div 
+            key={project.id} 
+            className={`project-card ${project.title === 'CareerMind' ? 'featured-highlight' : ''}`}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <div className="project-card-inner">
+              <div className="project-top">
+                <span className="project-category">{project.category}</span>
+                {project.featured && <span className="featured-badge">Featured</span>}
               </div>
-
-              <div className="project-footer">
+              
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-desc">{project.description}</p>
+              
+              <div className="project-bottom">
                 <div className="project-tech">
                   {project.technologies.slice(0, 4).map((tech, i) => (
-                    <span key={i}>{tech}</span>
+                    <span key={i} className="tech-pill">{tech}</span>
                   ))}
-                  {project.technologies.length > 4 && <span>+{project.technologies.length - 4}</span>}
+                  {project.technologies.length > 4 && (
+                    <span className="tech-pill more">+{project.technologies.length - 4}</span>
+                  )}
                 </div>
                 
                 <div className="project-links">
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link" aria-label="GitHub Repository">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-icon" aria-label="GitHub Repository">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
                   )}
                 </div>
               </div>
             </div>
-            
           </div>
         ))}
       </div>

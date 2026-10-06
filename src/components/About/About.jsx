@@ -3,10 +3,10 @@ import './About.css';
 
 const About = () => {
   const highlights = [
-    { title: '7+ Projects', desc: 'Practical implementations' },
-    { title: 'Full-Stack Journey', desc: 'End-to-end development' },
-    { title: 'Backend Focus', desc: '.NET & Architecture' },
-    { title: 'AI Enthusiast', desc: 'Intelligent systems' },
+    { title: '7+ Projects', desc: 'Practical implementations built from the ground up.' },
+    { title: 'Full-Stack Journey', desc: 'End-to-end development bridging frontend and backend.' },
+    { title: 'Backend Focus', desc: 'Active learning in modern .NET architecture.' },
+    { title: 'AI Enthusiast', desc: 'Exploring and integrating intelligent systems.' },
   ];
 
   return (
@@ -14,21 +14,23 @@ const About = () => {
       <h2 className="section-title">Who I Am</h2>
       
       <div className="about-content animate-on-scroll">
-        <div className="about-text">
-          <p>
-            I am a BSc (Hons) Computing student at Itahari International College affiliated with London Metropolitan University.
-          </p>
-          <p>
-            I have built multiple practical software projects using Java, Python, JavaScript, HTML, and CSS, and I am currently expanding into modern backend development with .NET.
-          </p>
-          <p>
-            My current interests lie in building real-world software, robust backend systems, full-stack applications, and exploring AI-powered solutions.
-          </p>
+        <div className="about-text-wrapper">
+          <div className="about-text">
+            <p>
+              I am a BSc (Hons) Computing student at Itahari International College, affiliated with London Metropolitan University. 
+            </p>
+            <p>
+              My journey involves building practical, problem-solving software. I've developed multiple projects using Java, Python, JavaScript, HTML, and CSS, and I am actively expanding my expertise into modern backend systems using <strong>.NET</strong>.
+            </p>
+            <p>
+              My core interests revolve around architecting clean backend solutions, delivering robust full-stack applications, and exploring the potential of AI-powered integrations in real-world scenarios.
+            </p>
+          </div>
         </div>
 
         <div className="highlights-grid">
           {highlights.map((item, index) => (
-            <div key={index} className="highlight-card">
+            <div key={index} className="highlight-card" style={{ animationDelay: `${index * 0.1}s` }}>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </div>

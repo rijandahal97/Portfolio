@@ -9,15 +9,22 @@ const Experience = () => {
       <div className="timeline-container animate-on-scroll">
         
         <div className="timeline-item">
-          <div className="timeline-dot"></div>
+          <div className="timeline-marker">
+            <div className="timeline-dot pulse-blue"></div>
+            <div className="timeline-line"></div>
+          </div>
+          
           <div className="timeline-content">
             <div className="timeline-header">
-              <h3>Backend Developer Intern (.NET)</h3>
-              <span className="timeline-date">Present</span>
+              <div className="role-company">
+                <h3>Backend Developer Intern</h3>
+                <span className="timeline-date">Present</span>
+              </div>
+              <span className="learning-badge">Learning / Mentorship</span>
             </div>
             
             <p className="timeline-description">
-              Currently working as a backend developer intern, focusing on building scalable systems using Microsoft technologies.
+              Actively learning and building backend services using Microsoft technologies. Focusing on clean architecture and scalable API development.
             </p>
             
             <div className="timeline-tech">
@@ -26,21 +33,10 @@ const Experience = () => {
               <span>Web API</span>
               <span>SQL Server</span>
               <span>Entity Framework Core</span>
-              <span>JWT authentication</span>
-              <span>Backend architecture</span>
+              <span>JWT Authentication</span>
             </div>
           </div>
         </div>
-
-        {/* Placeholder for future experiences */}
-        {/*
-        <div className="timeline-item">
-          <div className="timeline-dot"></div>
-          <div className="timeline-content">
-            ...
-          </div>
-        </div>
-        */}
 
       </div>
     </section>

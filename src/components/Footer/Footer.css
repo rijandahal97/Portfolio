@@ -1,74 +1,101 @@
 .footer {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-color);
-  padding: 4rem 0 2rem;
-  margin-top: 4rem;
+  background: rgba(3, 7, 18, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 5rem 0 2rem;
+  margin-top: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+  opacity: 0.5;
 }
 
 .footer-container {
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .footer-info h3 {
-  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .footer-info p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  max-width: 400px;
+  line-height: 1.6;
 }
 
 .footer-socials {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .footer-socials a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text-secondary);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition);
 }
 
 .footer-socials a:hover {
   background: var(--accent-gradient);
   color: white;
   border-color: transparent;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
 .footer-bottom {
   text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid var(--glass-border);
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-bottom p {
   color: var(--text-tertiary);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
 }
 
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+  
+  .footer-info p {
+    max-width: 100%;
   }
 }
